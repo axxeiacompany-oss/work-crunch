@@ -73,6 +73,7 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
   const [messages, setMessages] = useState<ChatMessage[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -159,9 +160,8 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
   };
 
   const handleResetChat = () => {
-    if (window.confirm('¿Deseas reiniciar la conversación con el asistente?')) {
-      setMessages([INITIAL_MESSAGE]);
-    }
+    setMessages([INITIAL_MESSAGE]);
+    setShowResetConfirm(false);
   };
 
   const activeQuickReplies = messages[messages.length - 1]?.quickReplies || [];
@@ -198,13 +198,31 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
             </button>
           )}
 
-          <button
-            onClick={handleResetChat}
-            title="Reiniciar conversación"
-            className="p-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 rounded-lg transition"
-          >
-            <RotateCcw className="w-4 h-4" />
-          </button>
+          {showResetConfirm ? (
+            <div className="flex items-center space-x-1.5 bg-[#251518] border border-red-800/80 px-2 py-1 rounded-xl text-xs animate-fade-in">
+              <span className="text-zinc-300 text-[11px]">¿Reiniciar?</span>
+              <button
+                onClick={handleResetChat}
+                className="bg-red-600 hover:bg-red-500 text-white font-bold px-2 py-0.5 rounded text-[10px] transition"
+              >
+                Sí
+              </button>
+              <button
+                onClick={() => setShowResetConfirm(false)}
+                className="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 px-2 py-0.5 rounded text-[10px] transition"
+              >
+                No
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setShowResetConfirm(true)}
+              title="Reiniciar conversación"
+              className="p-1.5 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/60 rounded-lg transition"
+            >
+              <RotateCcw className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </div>
 

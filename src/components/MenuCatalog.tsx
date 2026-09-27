@@ -56,7 +56,7 @@ export const MenuCatalog: React.FC<MenuCatalogProps> = ({
       <div className="relative rounded-3xl overflow-hidden mb-6 border border-red-900/40 shadow-2xl bg-gradient-to-r from-black via-[#1c1214] to-red-950">
         <div className="absolute inset-0 opacity-30 mix-blend-overlay">
           <img
-            src="/src/assets/images/wok_crunch_banner_1790467329265.jpg"
+            src="/images/wok_crunch_banner_1790467329265.jpg"
             alt="Wok Crunch Banner"
             className="w-full h-full object-cover"
           />

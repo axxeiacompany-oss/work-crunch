@@ -102,22 +102,11 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
     return text;
   };
 
-  const handleSendToWhatsApp = () => {
-    onUpdateOrder({
-      deliveryAddress: address,
-      paymentMethod: paymentMethod,
-      isConfirmed: true,
-    });
-
-    const message = generateWhatsAppMessage();
-    const encoded = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/595991607393?text=${encoded}`;
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  };
+  const whatsappMessage = generateWhatsAppMessage();
+  const whatsappUrl = `https://wa.me/595991607393?text=${encodeURIComponent(whatsappMessage)}`;
 
   const handleCopySummary = () => {
-    const text = generateWhatsAppMessage();
-    navigator.clipboard.writeText(text);
+    navigator.clipboard.writeText(whatsappMessage);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -334,13 +323,22 @@ export const OrderSummaryModal: React.FC<OrderSummaryModalProps> = ({
               Consultar con el Asistente
             </button>
 
-            <button
-              onClick={handleSendToWhatsApp}
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => {
+                onUpdateOrder({
+                  deliveryAddress: address,
+                  paymentMethod: paymentMethod,
+                  isConfirmed: true,
+                });
+              }}
               className="flex-1 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 text-white font-extrabold text-xs py-3 px-4 rounded-xl shadow-lg shadow-emerald-950/60 flex items-center justify-center gap-2 transition active:scale-95"
             >
               <Phone className="w-4 h-4 fill-white" />
               <span>Enviar Pedido por WhatsApp</span>
-            </button>
+            </a>
           </div>
         )}
       </div>

@@ -41,7 +41,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 23000,
     priceFormatted: '₲23.000',
     description: 'Arroz salteado al wok al fuego vivo con pechuga de pollo marinada, verduras frescas, huevo y toque especial de la casa.',
-    image: '/src/assets/images/arroz_pollo_dish_1790468115753.jpg',
+    image: '/images/arroz_pollo_dish_1790468115753.jpg',
     badge: 'Popular',
   },
   {
@@ -52,7 +52,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 25000,
     priceFormatted: '₲25.000',
     description: 'Sabroso arroz salteado en wok con tiernos cortes de carne vacuna seleccionada, vegetales crujientes y cebollitas de verdeo.',
-    image: '/src/assets/images/arroz_carne_dish_1790468126449.jpg',
+    image: '/images/arroz_carne_dish_1790468126449.jpg',
     badge: 'Favorito',
   },
   {
@@ -63,7 +63,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 75000,
     priceFormatted: '₲75.000',
     description: 'Exquisito arroz al wok con generosos camarones salteados, toque sutil de jengibre, huevo y salsa oriental tradicional.',
-    image: '/src/assets/images/arroz_camaron_dish_1790468136099.jpg',
+    image: '/images/arroz_camaron_dish_1790468136099.jpg',
     badge: 'Premium',
   },
 
@@ -76,7 +76,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 25000,
     priceFormatted: '₲25.000',
     description: 'Fideos tradicionales japoneses salteados al wok con tiernos bocados de pollo, repollo, zanahoria, cebolla y salsa yakisoba artesanal.',
-    image: '/src/assets/images/yakisoba_pollo_dish_1790468146314.jpg',
+    image: '/images/yakisoba_pollo_dish_1790468146314.jpg',
     badge: 'Clásico',
   },
   {
@@ -87,7 +87,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 28000,
     priceFormatted: '₲28.000',
     description: 'Fideos orientales salteados a fuego alto con tiras de carne de res, vegetales frescos salteados y el irresistible toque oriental.',
-    image: '/src/assets/images/yakisoba_carne_dish_1790468155564.jpg',
+    image: '/images/yakisoba_carne_dish_1790468155564.jpg',
     badge: 'Recomendado',
   },
   {
@@ -98,7 +98,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 75000,
     priceFormatted: '₲75.000',
     description: 'Fideos yakisoba premium con camarones frescos cocinados a punto, verduras al wok y salsa teriyaki yakisoba casera.',
-    image: '/src/assets/images/yakisoba_camaron_dish_1790468165661.jpg',
+    image: '/images/yakisoba_camaron_dish_1790468165661.jpg',
     badge: 'Especial',
   },
 
@@ -111,7 +111,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 40000,
     priceFormatted: '₲40.000',
     description: 'Pollo crocante glaseado con nuestra salsa agridulce oriental roja secreta y lluvia de semillas de sésamo tostadas.',
-    image: '/src/assets/images/pollo_agridulce_dish_1790468175792.jpg',
+    image: '/images/pollo_agridulce_dish_1790468175792.jpg',
     badge: 'Más Pedido',
   },
   {
@@ -122,7 +122,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 40000,
     priceFormatted: '₲40.000',
     description: 'Pollo súper crujiente bañado en salsa picante oriental picante y adictiva para los amantes del buen sabor.',
-    image: '/src/assets/images/pollo_picante_dish_1790468185881.jpg',
+    image: '/images/pollo_picante_dish_1790468185881.jpg',
     badge: 'Picante 🌶️',
   },
   {
@@ -133,7 +133,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 35000,
     priceFormatted: '₲35.000',
     description: 'Crocantes trozos de pollo dorado al estilo oriental tradicional, con su crujido característico y sabor jugoso por dentro.',
-    image: '/src/assets/images/pollo_normal_dish_1790468199417.jpg',
+    image: '/images/pollo_normal_dish_1790468199417.jpg',
     badge: 'Crocante',
   },
 
@@ -146,7 +146,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 15000,
     priceFormatted: '₲15.000',
     description: 'Porción individual de papas fritas doradas, súper crujientes con el punto justo de sal.',
-    image: '/src/assets/images/papas_pequena_dish_1790468211070.jpg',
+    image: '/images/papas_pequena_dish_1790468211070.jpg',
   },
   {
     id: 'papas-grande',
@@ -156,7 +156,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 20000,
     priceFormatted: '₲20.000',
     description: 'Generosa porción familiar o para compartir de papas fritas doraditas y crocantes.',
-    image: '/src/assets/images/papas_grande_dish_1790468221598.jpg',
+    image: '/images/papas_grande_dish_1790468221598.jpg',
     badge: 'Para Compartir',
   },
 
@@ -169,7 +169,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 15000,
     priceFormatted: '₲15.000',
     description: 'Hamburguesa clásica jugosa con queso derretido, vegetales frescos y salsas de la casa en pan suave tostado.',
-    image: '/src/assets/images/burger_pequena_dish_1790468232951.jpg',
+    image: '/images/burger_pequena_dish_1790468232951.jpg',
   },
   {
     id: 'hamburguesa-grande',
@@ -179,7 +179,7 @@ export const MENU_ITEMS: MenuItem[] = [
     price: 25000,
     priceFormatted: '₲25.000',
     description: 'Gran hamburguesa con carne extra jugosa, doble queso, lechuga crocante, tomate y salsa especial de Wok Crunch.',
-    image: '/src/assets/images/burger_grande_dish_1790468243010.jpg',
+    image: '/images/burger_grande_dish_1790468243010.jpg',
     badge: 'Contundente',
   },
 ];
