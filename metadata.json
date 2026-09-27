@@ -1,0 +1,7 @@
+{
+  "name": "Wok Crunch Oriental - Asistente Virtual",
+  "description": "Asistente virtual y sistema de pedidos de delivery para Wok Crunch Oriental. Sabor oriental en cada bocado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
