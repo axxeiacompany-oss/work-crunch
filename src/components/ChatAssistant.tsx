@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { RESTAURANT_INFO, formatGuarani } from '../data/menu';
+import { generateFallbackResponse } from '../utils/assistantLogic';
 import { 
   Send, 
   Flame, 
@@ -145,15 +146,27 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
         });
       }
     } catch (err: any) {
-      console.error(err);
-      const errorMsg: ChatMessage = {
-        id: `err-${Date.now()}`,
+      console.warn('Backend unavailable, using local intelligent assistant:', err);
+      const fallbackData = generateFallbackResponse(textToSend, currentOrder);
+      const fallbackMsg: ChatMessage = {
+        id: `fb-${Date.now()}`,
         role: 'assistant',
-        content: '¡Disculpa! Hubo un detalle de conexión, pero aquí estoy listo para seguir tomando tu pedido. También puedes contactar directamente con el local por WhatsApp al 0991607393. ¿Qué deseas ordenar?',
+        content: fallbackData.reply,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        quickReplies: ['📜 Ver Menú', '🍗 Pollo Frito', '📲 WhatsApp'],
+        quickReplies: fallbackData.quickReplies,
+        orderPreview: fallbackData.order && fallbackData.order.items.length > 0 ? fallbackData.order : undefined,
       };
-      setMessages((prev) => [...prev, errorMsg]);
+      setMessages((prev) => [...prev, fallbackMsg]);
+
+      if (fallbackData.order && fallbackData.order.items.length > 0) {
+        onUpdateOrder({
+          items: fallbackData.order.items,
+          total: fallbackData.order.total,
+          deliveryAddress: fallbackData.order.deliveryAddress || currentOrder.deliveryAddress,
+          paymentMethod: fallbackData.order.paymentMethod || currentOrder.paymentMethod,
+          isConfirmed: Boolean(fallbackData.order.isConfirmed),
+        });
+      }
     } finally {
       setIsLoading(false);
     }
